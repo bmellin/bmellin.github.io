@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <style>
 
   :root{
@@ -247,9 +249,14 @@
     gap: 14px;
     transition: border-color 0.2s ease, transform 0.2s ease;
   }
+  
+  .card-featured{
+    grid-column: 1 / -1;
+}
 
   .card:hover{
-    border-color: var(--border);
+    border-color:var(--temper-4);
+    box-shadow:0 0 18px rgba(62,110,145,.18);
     transform: translateY(-2px);
   }
 
@@ -421,7 +428,7 @@
   <div class="wrap hero">
     <div class="eyebrow">Materials Science &mdash; Aerospace &amp; Defense</div>
     <h1 class="name">Ben Mellin</h1>
-    <p class="hero-sub">I study how materials fail, and build the systems that make sure they don't.</p>
+    <p class="hero-sub">Materials engineer specializing in aerospace structures, high-temperature materials, and simulation.</p>
     <p class="hero-body">
       Materials science &amp; engineering graduate from the University of Florida with aerospace
       experience through the IPPD program, where Honeywell Aerospace served as industry
@@ -449,8 +456,8 @@
       </div>
 
       <div class="projects-grid">
-
-        <div class="card reveal">
+        
+        <div class="card card-featured reveal">       
           <span class="tag tag-aerospace">Aerospace</span>
           <h3>IPPD Capstone &mdash; Honeywell Aerospace</h3>
           <p>
@@ -461,7 +468,10 @@
             demisable satellite housings against Design for Demise reentry
             survivability requirements. Documented findings in technical reports and 
             a team website, and presented to the sponsor team at the end of the semester.
-            https://www.ippd.ufl.edu/blogs/ay2526team10/ 
+            <br>
+            <a href="https://www.ippd.ufl.edu/blogs/ay2526team10/" target="_blank">
+            View project website →
+            </a>
           </p>
           <div class="chip-row">
             <span class="chip">Materials Selection</span>
@@ -569,12 +579,23 @@
         <div>
           <h3 class="contact-title">Open to roles in aerospace and defense materials engineering.</h3>
         </div>
-        <div class="contact-links">
-          <a href="mailto:benmellin27@gmail.com">Email</a>
-          <a href="https://github.com/bmellin">GitHub</a>
-          <a href="https://linkedin.com/in/bmellin">LinkedIn</a>
-          <a href="resume.pdf">Resume</a>
-        </div>
+          <div class="contact-links">
+              <a href="mailto:benmellin27@gmail.com">
+                  <i class="bi bi-envelope"></i> Email
+              </a>
+
+              <a href="https://github.com/bmellin">
+                  <i class="bi bi-github"></i> GitHub
+              </a>
+
+              <a href="https://linkedin.com/in/bmellin">
+                  <i class="bi bi-linkedin"></i> LinkedIn
+              </a>
+
+              <a href="resume.pdf">
+                  <i class="bi bi-file-earmark-text"></i> Resume
+              </a>
+          </div>
       </div>
     </div>
   </section>
