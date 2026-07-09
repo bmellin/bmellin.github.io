@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ben Mellin — Materials Science &amp; Aerospace</title>
+<meta name="description" content="Ben Mellin, materials science engineer with aerospace and defense experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg: #10151a;
+    --surface: #161d23;
+    --surface-2: #1c252c;
+    --border: #2a343b;
+    --border-soft: #212a30;
+    --text: #edeee9;
+    --text-dim: #93a0a6;
+    --text-faint: #5c6a70;
+
+    /* temper color ramp, drawn from the straw-to-blue progression steel
+       shows as it's tempered from roughly 230C to 300C */
+    --temper-1: #e9c468; /* straw */
+    --temper-2: #d9853a; /* bronze */
+    --temper-3: #a85c7c; /* purple */
+    --temper-4: #3e6e91; /* blue */
+
+    --accent: #3e6e91;
+    --accent-warm: #d9853a;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    --maxw: 1080px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection{ background: var(--temper-4); color: var(--bg); }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* signature divider: the temper gradient rule */
+  .temper-rule{
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg,
+      var(--temper-1) 0%,
+      var(--temper-2) 33%,
+      var(--temper-3) 66%,
+      var(--temper-4) 100%);
+  }
+
+  .temper-rule.thin{ height: 2px; opacity: 0.55; }
+
+  /* ---------- nav ---------- */
+  header.site-nav{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(16, 21, 26, 0.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .nav-inner{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-mark{
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-links{
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  .nav-links a{
+    text-decoration: none;
+    color: var(--text-dim);
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover{ color: var(--text); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding: 96px 0 72px;
+  }
+
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.12em;
+    color: var(--temper-4);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+
+  h1.name{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1.02;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-sub{
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(19px, 2.4vw, 24px);
+    color: var(--text-dim);
+    max-width: 620px;
+    margin: 0 0 28px;
+  }
+
+  .hero-body{
+    max-width: 560px;
+    color: var(--text-dim);
+    font-size: 16px;
+    margin: 0 0 36px;
+  }
+
+  .hero-cta{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .btn-primary{
+    background: var(--text);
+    color: var(--bg);
+    border: 1px solid var(--text);
+  }
+  .btn-primary:hover{ transform: translateY(-1px); }
+
+  .btn-ghost{
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover{ border-color: var(--text-dim); }
+
+  .hero-meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--text-faint);
+    border-top: 1px solid var(--border-soft);
+    padding-top: 20px;
+  }
+
+  .hero-meta span::before{
+    content: "// ";
+    color: var(--text-faint);
+  }
+
+  /* ---------- section shell ---------- */
+  section{ padding: 76px 0; }
+
+  .section-head{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .section-title{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0;
+  }
+
+  .section-note{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--text-faint);
+  }
+
+  /* ---------- projects ---------- */
+  .projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+  }
+
+  .card{
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 6px;
+    padding: 26px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .card:hover{
+    border-color: var(--border);
+    transform: translateY(-2px);
+  }
+
+  .tag{
+    display: inline-block;
+    width: fit-content;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 4px 9px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  .tag-materials{ background: rgba(217, 133, 58, 0.14); color: var(--temper-2); }
+  .tag-aerospace{ background: rgba(62, 110, 145, 0.16); color: var(--temper-4); }
+  .tag-software{ background: rgba(168, 92, 124, 0.16); color: var(--temper-3); }
+
+  .card h3{
+    font-family: var(--font-display);
+    font-size: 19px;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .card p{
+    font-size: 14.5px;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .chip-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: auto;
+    padding-top: 6px;
+  }
+
+  .chip{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    border: 1px solid var(--border-soft);
+    padding: 4px 9px;
+    border-radius: 3px;
+  }
+
+  /* ---------- skills ---------- */
+  .skills-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+  }
+
+  .skill-group h4{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 16px;
+  }
+
+  .skill-group ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .skill-group li{
+    padding: 9px 0;
+    border-top: 1px solid var(--border-soft);
+    font-size: 15px;
+    color: var(--text);
+  }
+  .skill-group li:first-of-type{ border-top: none; }
+
+  /* ---------- contact ---------- */
+  .contact{
+    padding-bottom: 100px;
+  }
+
+  .contact-grid{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .contact-title{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 40px);
+    max-width: 480px;
+    margin: 0 0 8px;
+  }
+
+  .contact-links{
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+  }
+
+  .contact-links a{
+    text-decoration: none;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .contact-links a:hover{ color: var(--text); border-color: var(--text); }
+
+  footer{
+    border-top: 1px solid var(--border-soft);
+    padding: 22px 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-faint);
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .reveal{ opacity: 1; transform: none; transition: none; }
+    .card:hover{ transform: none; }
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--temper-4);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 640px){
+    .hero{ padding: 64px 0 48px; }
+    section{ padding: 56px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top">BEN MELLIN</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="wrap hero">
+    <div class="eyebrow">Materials Science &mdash; Aerospace &amp; Defense</div>
+    <h1 class="name">Ben Mellin</h1>
+    <p class="hero-sub">I study how materials fail, and build the systems that make sure they don't.</p>
+    <p class="hero-body">
+      Materials science engineering student at the University of Florida with aerospace
+      experience through the IPPD program, where Honeywell Aerospace served as industry
+      partner. Currently pursuing full time roles across defense and aerospace, spanning
+      materials engineering, manufacturing, and applied software.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#projects">View projects</a>
+      <a class="btn btn-ghost" href="resume.pdf">Download resume</a>
+    </div>
+    <div class="hero-meta">
+      <span>University of Florida &mdash; Materials Science &amp; Engineering</span>
+      <span>Gainesville, FL</span>
+      <span>Open to relocation</span>
+    </div>
+  </div>
+
+  <div class="temper-rule"></div>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 class="section-title">Projects</h2>
+        <div class="section-note">materials &middot; aerospace &middot; software</div>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="card reveal">
+          <span class="tag tag-aerospace">Aerospace</span>
+          <h3>IPPD Capstone &mdash; Honeywell Aerospace</h3>
+          <p>
+            Led the materials engineering workstream on a cross functional capstone
+            with Honeywell Aerospace as industry partner, culminating in a live
+            high temperature demonstration in front of the sponsor team.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Materials Selection</span>
+            <span class="chip">Thermal Testing</span>
+            <span class="chip">Team Leadership</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <span class="tag tag-materials">Materials</span>
+          <h3>Inconel 718 Turbine Blade Manufacturing</h3>
+          <p>
+            Technical report evaluating Vacuum Pressure Investment Casting with
+            EI-MFC ultrasonic post processing for Inconel 718 turbine blades,
+            including a full manufacturing cost analysis.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Inconel 718</span>
+            <span class="chip">VPIC</span>
+            <span class="chip">Cost Analysis</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <span class="tag tag-aerospace">Aerospace</span>
+          <h3>Design for Demise: Satellite Reentry Materials</h3>
+          <p>
+            Compared Al7075, AZ31B, AZ91D, and WE43 magnesium alloys for
+            demisable satellite housings against Design for Demise reentry
+            survivability requirements.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Alloy Selection</span>
+            <span class="chip">Reentry Analysis</span>
+            <span class="chip">Magnesium Alloys</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <span class="tag tag-software">Software</span>
+          <h3>ML for Materials Property Prediction</h3>
+          <p>
+            Applied regression and neural network methods to predict PBE
+            bandgap values from materials datasets, comparing architectures
+            for accuracy and generalization.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Python</span>
+            <span class="chip">Regression</span>
+            <span class="chip">Neural Networks</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <span class="tag tag-software">Software</span>
+          <h3>Self-Hosted Discord Bot on AWS</h3>
+          <p>
+            Built and deployed a Python Discord bot on AWS infrastructure,
+            independently handling hosting, uptime, and ongoing maintenance.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Python</span>
+            <span class="chip">AWS</span>
+            <span class="chip">Systems Administration</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="temper-rule thin"></div>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 class="section-title">Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h4>Materials &amp; Manufacturing</h4>
+          <ul>
+            <li>Alloy selection &amp; failure analysis</li>
+            <li>Heat treatment &amp; forging</li>
+            <li>Investment casting (VPIC)</li>
+            <li>Age hardening</li>
+            <li>Optical microscopy</li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4>Software &amp; Data</h4>
+          <ul>
+            <li>Python</li>
+            <li>Machine learning (CNNs, PCA, clustering)</li>
+            <li>AWS</li>
+            <li>Data analysis</li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4>Tools &amp; Reporting</h4>
+          <ul>
+            <li>CAD tools</li>
+            <li>MATLAB</li>
+            <li>Technical report writing</li>
+            <li>Cost analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="temper-rule"></div>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="contact-grid reveal">
+        <div>
+          <h3 class="contact-title">Open to roles in aerospace and defense materials engineering.</h3>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:benmellin27@example.com">Email</a>
+          <a href="https://github.com/bmellin">GitHub</a>
+          <a href="https://linkedin.com/in/bmellin">LinkedIn</a>
+          <a href="resume.pdf">Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Ben Mellin &middot; Gainesville, FL</div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>
