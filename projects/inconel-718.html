@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inconel 718 Turbine Blade Manufacturing — Ben Mellin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .proj-section{ margin-bottom: 40px; }
+  .proj-h2{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .proj-body{
+    color: var(--text-dim);
+    max-width: 700px;
+    font-size: 15.5px;
+  }
+  .proj-body p{ margin: 0 0 14px; }
+  .stat-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 20px 0 8px;
+  }
+  .stat{
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 6px;
+    padding: 16px 20px;
+    min-width: 160px;
+  }
+  .stat-value{
+    font-family: var(--font-mono);
+    font-size: 22px;
+    color: var(--temper-4);
+  }
+  .stat-label{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 4px;
+  }
+  .role-note{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--temper-4);
+    border-left: 2px solid var(--temper-4);
+    padding-left: 12px;
+    margin: 20px 0 32px;
+  }
+  .figure-row{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .figure{
+    flex: 1;
+    min-width: 220px;
+  }
+  .figure img{
+    width: 100%;
+    height: 440px;
+    object-fit: contain;
+    background: var(--surface-2);
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    display: block;
+  }
+  .figure-cap{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 8px;
+  }
+  .figure-wide img{
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    object-fit: contain;
+    background: var(--surface-2);
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="../index.html">BEN MELLIN</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap" style="padding-top:56px; padding-bottom:100px;">
+  <a href="../index.html#projects" class="btn btn-ghost" style="margin-bottom:32px; display:inline-flex;">&larr; Back to projects</a>
+
+  <div>
+    <span class="tag tag-materials">Materials</span>
+  </div>
+  <h1 style="font-family:var(--font-display); font-weight:600; font-size:34px; margin-top:14px; margin-bottom:10px; max-width:720px;">
+    Superalloy Design for Oxygen &amp; Hydrogen Embrittlement Resistance
+  </h1>
+  <p style="color:var(--text-dim); max-width:680px; margin-bottom:8px; font-size:16px;">
+    A materials selection and manufacturing study for a hydrogen-fueled gas turbine
+    blade, conducted with a 5-person team, Team Metalheads, for Senior Design.
+  </p>
+
+  <div class="role-note">
+    My role: Problem Statement, Cost Analysis, Proposed Design Solution, and EI-MFC post-processing
+  </div>
+
+  <div class="temper-rule thin" style="margin-bottom:32px;"></div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Problem</h2>
+    <div class="proj-body">
+      <p>
+        Nickel-based superalloys are the industry standard for turbine blades due to
+        their high-temperature strength and creep resistance, but two degradation
+        mechanisms limit their service life in demanding environments: oxygen-assisted
+        intergranular cracking (OAIC), where oxygen diffuses along grain boundaries and
+        forms brittle oxide paths, and hydrogen embrittlement (HE), where hydrogen
+        accumulates at grain boundaries and weakens atomic bonding. Both are especially
+        relevant for the next generation of hydrogen-fueled gas turbine engines, where
+        blades face oxidizing atmospheres, centrifugal loading, and hydrogen exposure
+        simultaneously, above 650&deg;C.
+      </p>
+      <p>
+        The goal was to design an alloy and manufacturing route that resists both
+        failure modes while remaining manufacturable and cost-competitive, without
+        relying on expensive thermal barrier coatings.
+      </p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Material Selection</h2>
+    <div class="proj-body">
+      <p>
+        Candidate materials were compared using a combined material index,
+        M = (K<sub>IC</sub> &middot; &sigma;<sub>y</sub>) / (&rho; &middot; C&sup2;),
+        rewarding high fracture toughness and yield strength while penalizing density
+        and cost. Inconel 718, Hastelloy X, CMSX-4, and UMCo-50 were all evaluated
+        against this index and an Ashby chart comparison.
+      </p>
+      <p>
+        Inconel 718 was selected as the final material. It combines high strength,
+        corrosion resistance, and strong fabricability into complex geometries, and is
+        precipitation hardenable, meaning its mechanical properties can be tuned
+        through controlled heat treatment. Design targets were set at fracture
+        toughness greater than 80 MPa&radic;m, yield strength greater than 100 ksi, and
+        hydrogen diffusivity below roughly 10<sup>&minus;12</sup> cm&sup2;/s.
+      </p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Manufacturing: Vacuum Investment Casting</h2>
+    <div class="proj-body">
+      <p>
+        The blade is grown as a single crystal via vacuum investment casting (VPIC),
+        eliminating grain boundaries entirely, the pathways oxygen and hydrogen rely
+        on to diffuse and embrittle the material. Casting under vacuum prevents oxide
+        and nitride formation that would otherwise weaken the reactive superalloy
+        during solidification, while a helical starter channel filters out competing
+        grains so a single crystal orientation grows from the chilled base.
+      </p>
+    </div>
+    <div class="figure figure-wide">
+      <img src="media/inconel-vpic-schematic.png" alt="Schematic of vacuum investment casting process, melting under vacuum and pouring under overpressure">
+      <div class="figure-cap">Fig. 1 &mdash; Vacuum investment casting schematic</div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Post-Processing: EI-MFC &amp; Electropolishing</h2>
+    <div class="proj-body">
+      <p>
+        After casting, the blade undergoes Energy Intensive Multifunctional Cavitation
+        (EI-MFC), an ultrasonic treatment where collapsing cavitation bubbles impart
+        highly localized shock waves to the surface, inducing a compressive residual
+        stress layer and hardening the material. In Inconel 718, this process
+        increased the area fraction of the strengthening &gamma;&prime; phase from
+        <strong>57.1% to 70.7%</strong> in the tested samples, which matters because the
+        &gamma;&prime; phase has roughly an order of magnitude lower hydrogen
+        diffusivity than the surrounding &gamma; phase, directly reducing hydrogen
+        transport toward grain boundaries.
+      </p>
+    </div>
+    <div class="figure-row">
+      <div class="figure">
+        <img src="media/inconel-eimfc-schematic.png" alt="Schematic of the EI-MFC ultrasonic cavitation setup">
+        <div class="figure-cap">Fig. 2 &mdash; EI-MFC ultrasonic transduction schematic</div>
+      </div>
+      <div class="figure">
+        <img src="media/inconel-gamma-prime-comparison.png" alt="Comparison of gamma prime phase area fraction before and after EI-MFC treatment">
+        <div class="figure-cap">Fig. 4 &mdash; &gamma;&prime; phase fraction, before (57.1%) and after (70.7%) EI-MFC</div>
+      </div>
+    </div>
+    <div class="proj-body" style="margin-top:20px;">
+      <p>
+        A final electropolishing step removes surface roughness, burrs, and stress
+        concentrators via anodic dissolution, producing an aerodynamic, ultraclean
+        surface that also eliminates high-stress hydrogen trapping sites.
+      </p>
+    </div>
+    <div class="figure figure-wide">
+      <img src="media/inconel-manufacturing-flowchart.png" alt="Flowchart of the proposed manufacturing process from raw material to finished component">
+      <div class="figure-cap">Fig. 5 &mdash; Proposed manufacturing process flow</div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Cost Analysis</h2>
+    <div class="proj-body">
+      <p>
+        I built the cost model for a 100-unit production batch, covering materials,
+        labor, overhead, tooling, and non-recurring R&amp;D costs.
+      </p>
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-value">$325,000</div>
+        <div class="stat-label">total estimated cost, 100-blade batch</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">$3,250</div>
+        <div class="stat-label">cost per blade</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">$16.15/kg</div>
+        <div class="stat-label">blended raw alloy material cost</div>
+      </div>
+    </div>
+    <div class="proj-body" style="margin-top:20px;">
+      <p>
+        Material cost turned out to be a minor share of the total, roughly $3 per
+        part, while direct labor dominated recurring cost at $1,000 per blade,
+        reflecting the manual intensity of wax pattern preparation, ceramic shell
+        fabrication, and post-processing. Non-recurring costs totaled approximately
+        $173,000, split between capital equipment ($65,000, including the VPIC
+        furnace and EI-MFC ultrasonic system) and R&amp;D and certification
+        ($100,000), reflecting the experimental nature of EI-MFC as a non-standard
+        process.
+      </p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Outcome</h2>
+    <div class="proj-body">
+      <p>
+        All four design objectives were met: fracture toughness and yield strength
+        targets were satisfied through the material index selection, hydrogen
+        embrittlement resistance was achieved through Inconel 718's alloy design
+        combined with EI-MFC's effect on the &gamma;/&gamma;&prime; interface, and
+        sustainability was improved alongside a proposed cost reduction of roughly
+        $1,700 relative to baseline approaches, while lowering the overall
+        environmental impact of the manufacturing route.
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">Ben Mellin &middot; Tampa, FL</div>
+</footer>
+
+</body>
+</html>
