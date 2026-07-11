@@ -9,6 +9,104 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="../styles.css">
+<style>
+  .proj-section{ margin-bottom: 40px; }
+  .proj-h2{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .proj-body{
+    color: var(--text-dim);
+    max-width: 700px;
+    font-size: 15.5px;
+  }
+  .proj-body p{ margin: 0 0 14px; }
+  .stat-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 20px 0 8px;
+  }
+  .stat{
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 6px;
+    padding: 16px 20px;
+    min-width: 170px;
+  }
+  .stat-value{
+    font-family: var(--font-mono);
+    font-size: 20px;
+    color: var(--temper-4);
+  }
+  .stat-label{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 4px;
+  }
+  .stat-target{
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--text-faint);
+    margin-top: 2px;
+    opacity: 0.75;
+  }
+  .role-note{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--temper-4);
+    border-left: 2px solid var(--temper-4);
+    padding-left: 12px;
+    margin: 20px 0 32px;
+  }
+  .figure-row{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .figure{
+    flex: 1;
+    min-width: 220px;
+  }
+  .figure img{
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    background: var(--surface-2);
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    display: block;
+  }
+  .figure-cap{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 8px;
+  }
+  .figure-wide img{
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    background: var(--surface-2);
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    display: block;
+    margin: 0 auto;
+  }
+  .team-note{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-faint);
+    max-width: 680px;
+    margin-top: 4px;
+  }
+</style>
 </head>
 <body>
 
@@ -29,18 +127,176 @@
   <div>
     <span class="tag tag-aerospace">Aerospace</span>
   </div>
-  <h1 style="font-family:var(--font-display); font-weight:600; font-size:36px; margin-top:14px; margin-bottom:18px;">Atmospheric Re-Entry Control — Honeywell Aerospace</h1>
-
-  <p style="color:var(--text-dim); max-width:640px; margin-bottom:32px; font-size:16px;">
-    Placeholder overview. Replace this with the full writeup, problem, approach, and outcome.
+  <h1 style="font-family:var(--font-display); font-weight:600; font-size:34px; margin-top:14px; margin-bottom:10px; max-width:720px;">
+    Atmospheric Re-Entry Control &mdash; Design for Demise
+  </h1>
+  <p style="color:var(--text-dim); max-width:680px; margin-bottom:4px; font-size:16px;">
+    IPPD capstone with Honeywell Aerospace as industry sponsor. A 7-person team
+    designing an electronic housing that reliably demises during atmospheric
+    re-entry.
   </p>
+  <p class="team-note">
+    Team A.R.C.: Zach Arzt, Michael Daher, Edwin Feldman, Andrew Griner, Avery Hames,
+    Ben Mellin, Loi Park &middot; Faculty Coach: Dr. Rick Lind &middot; Liaison Engineers:
+    Joseph McMahan, Caleb Sjoquist
+  </p>
+
+  <div class="role-note">
+    My role: Lead, physical prototype sub-team &amp; materials selection workstream
+  </div>
 
   <div class="temper-rule thin" style="margin-bottom:32px;"></div>
 
-  <h2 style="font-family:var(--font-display); font-size:20px; margin-bottom:12px;">Details</h2>
-  <p style="color:var(--text-dim); max-width:640px;">
-    Add images, diagrams, or data specific to this project here once available.
-  </p>
+  <div class="proj-section">
+    <h2 class="proj-h2">Problem</h2>
+    <div class="proj-body">
+      <p>
+        As more satellites enter orbit, end-of-life disposal is becoming increasingly
+        relevant. Satellites re-entering Earth's atmosphere must either fully burn up
+        or re-enter in a controlled manner, landing in the ocean. This project focused
+        on the cheaper and more broadly applicable of the two paths: designing
+        hardware that reliably burns up on re-entry, known as Design for Demise, so
+        that no debris large enough to injure someone on the ground survives to reach
+        the surface.
+      </p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Approach: The S.M.A.R.T. Process</h2>
+    <div class="proj-body">
+      <p>
+        I led development of a custom methodology, Simulation and Machine-learning
+        Assisted Redesign and Testing (S.M.A.R.T.), that replaced manual
+        trial-and-error with an automated, data-driven design loop. A Latin Hypercube
+        sampling generated an initial set of design parameter combinations, each was
+        modeled in SolidWorks and evaluated in ANSYS for aerodynamic and thermal
+        performance, scored by a custom cost function rewarding higher demisability,
+        then fed into a Kriging model to propose the next, more promising batch of
+        parameters. This loop repeated across the semester to converge on a
+        near-optimal design without needing to simulate every possible geometry.
+      </p>
+    </div>
+    <div class="figure figure-wide">
+      <img src="media/arc-smart-process.jpg" alt="Diagram of the S.M.A.R.T. process: starting design, machine learning optimization, SolidWorks models, ANSYS analysis, cost function, repeat">
+      <div class="figure-cap">The S.M.A.R.T. design loop</div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Design Parameters</h2>
+    <div class="proj-body">
+      <p>
+        The design space spanned five variables, flap angle (0 to 89&deg;), flap
+        length (0 to 6.4 in), wall angle (64 to 90&deg;), wall thickness (0.2 to 0.25
+        in), and material choice between aluminum and magnesium. Deployable flaps
+        were a key design lever, engineered to induce intentional shock-shock
+        interference during descent and increase surface area exposed to heating.
+      </p>
+    </div>
+    <div class="figure figure-wide">
+      <img src="media/arc-design-parameters.jpg" alt="Table of design parameters and a CAD render of the housing with deployable flaps">
+      <div class="figure-cap">Design parameter space and baseline CAD geometry</div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Simulation: ANSYS Fluent &amp; Vibrations</h2>
+    <div class="proj-body">
+      <p>
+        Each candidate geometry was run through ANSYS Fluent at conditions matching
+        re-entry at 65 km altitude to gather average temperature, heat flux, and heat
+        transfer rate, twenty simulations across the design space. In parallel, ANSYS
+        modal analysis identified natural frequencies and mode shapes, and the
+        geometry was iteratively adjusted to lower the fundamental natural frequency,
+        aligning structural weak points with the demisability goals rather than fighting
+        against them.
+      </p>
+    </div>
+    <div class="figure-row">
+      <div class="figure">
+        <img src="media/arc-ansys-fluent.jpg" alt="ANSYS Fluent thermal simulation results showing heat distribution across the housing during re-entry">
+        <div class="figure-cap">ANSYS Fluent, thermal loading at 65 km re-entry</div>
+      </div>
+      <div class="figure">
+        <img src="media/arc-ansys-vibrations.jpg" alt="ANSYS modal analysis results showing deformation and natural frequency mode shapes">
+        <div class="figure-cap">ANSYS modal analysis, mode shapes and deformation</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Results</h2>
+    <div class="proj-body">
+      <p>
+        The final design cleared every Technical Performance Measure set for the
+        Final Design Review, across all 20 simulations run at the target 65 km
+        altitude.
+      </p>
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-value">1,443 K</div>
+        <div class="stat-label">avg. temperature reached</div>
+        <div class="stat-target">target: &ge; 1,200 K</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">548 MW/m&sup2;</div>
+        <div class="stat-label">heat flux</div>
+        <div class="stat-target">target: &ge; 400 MW/m&sup2;</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">39.6 MW</div>
+        <div class="stat-label">heat transfer rate</div>
+        <div class="stat-target">target: &ge; 30 MW</div>
+      </div>
+    </div>
+    <div class="figure figure-wide" style="margin-top:24px;">
+      <img src="media/arc-cost-function.jpg" alt="Cost function formula and technical performance measure results table">
+      <div class="figure-cap">Custom demisability cost function and final TPM results</div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Physical Proof of Concept</h2>
+    <div class="proj-body">
+      <p>
+        As lead of the physical prototype sub-team, I helped build a working
+        prototype to demonstrate the design was manufacturable, not purely
+        theoretical. The build included electronic flap actuation, a thermistor and
+        IMU for sensing, and a custom PCB driving the servos, all packaged inside the
+        demised-housing geometry validated in simulation.
+      </p>
+    </div>
+    <div class="figure-row">
+      <div class="figure">
+        <img src="media/arc-physical-poc.jpg" alt="CAD cutaway of the physical prototype showing internal servo actuation and electronics">
+        <div class="figure-cap">Prototype CAD, internal actuation and electronics layout</div>
+      </div>
+      <div class="figure">
+        <img src="media/arc-electronic-pcb.jpg" alt="Photo of the custom PCB with servo and thermistor connections">
+        <div class="figure-cap">Custom PCB driving flap servos and sensors</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Outcome</h2>
+    <div class="proj-body">
+      <p>
+        The team's product was the S.M.A.R.T. process itself, not just the single
+        resulting geometry, a scalable methodology that could be applied to any
+        electronic housing design problem given more simulation time and computing
+        resources. All Technical Performance Measures were met at the Final Design
+        Review, and the project was presented to Honeywell Aerospace sponsors
+        throughout the design cycle via a public weekly blog.
+      </p>
+      <p>
+        <a href="https://www.ippd.ufl.edu/blogs/ay2526team10/" target="_blank">View the team's public project blog &rarr;</a>
+      </p>
+    </div>
+  </div>
+
 </main>
 
 <footer>
