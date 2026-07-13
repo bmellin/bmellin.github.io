@@ -436,6 +436,6 @@
   }
 
   @media (max-width: 640px){
-    .hero{ padding: 64px 0 48px; }
-    section{ padding: 56px 0; }
+    .hero{ padding-top: 64px; padding-bottom: 48px; }
+    section{ padding-top: 56px; padding-bottom: 56px; }
   }

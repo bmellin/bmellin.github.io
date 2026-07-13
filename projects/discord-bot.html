@@ -9,6 +9,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="../styles.css">
+<style>
+  .proj-section{ margin-bottom: 40px; }
+  .proj-h2{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .proj-body{
+    color: var(--text-dim);
+    max-width: 700px;
+    font-size: 15.5px;
+  }
+  .proj-body p{ margin: 0 0 14px; }
+  .role-note{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--temper-4);
+    border-left: 2px solid var(--temper-4);
+    padding-left: 12px;
+    margin: 20px 0 32px;
+  }
+  .stack-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 8px;
+  }
+  .stack-chip{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    border: 1px solid var(--border-soft);
+    background: var(--surface);
+    padding: 6px 12px;
+    border-radius: 4px;
+  }
+</style>
 </head>
 <body>
 
@@ -29,18 +67,80 @@
   <div>
     <span class="tag tag-software">Software</span>
   </div>
-  <h1 style="font-family:var(--font-display); font-weight:600; font-size:36px; margin-top:14px; margin-bottom:18px;">Self-Hosted Discord Bot on AWS</h1>
-
-  <p style="color:var(--text-dim); max-width:640px; margin-bottom:32px; font-size:16px;">
-    Placeholder overview. Replace this with the full writeup, problem, approach, and outcome.
+  <h1 style="font-family:var(--font-display); font-weight:600; font-size:34px; margin-top:14px; margin-bottom:10px; max-width:720px;">
+    Self-Hosted Discord Bot on AWS
+  </h1>
+  <p style="color:var(--text-dim); max-width:680px; margin-bottom:8px; font-size:16px;">
+    A personal software project outside of coursework, built to get hands-on with
+    cloud infrastructure and full-stack ownership of a live application.
   </p>
+
+  <div class="role-note">
+    My role: solo developer, designed, built, and maintain the entire system
+  </div>
 
   <div class="temper-rule thin" style="margin-bottom:32px;"></div>
 
-  <h2 style="font-family:var(--font-display); font-size:20px; margin-bottom:12px;">Details</h2>
-  <p style="color:var(--text-dim); max-width:640px;">
-    Add images, diagrams, or data specific to this project here once available.
-  </p>
+  <div class="proj-section">
+    <h2 class="proj-h2">What It Does</h2>
+    <div class="proj-body">
+      <p>
+        The bot runs in a Discord server and provides a set of games and fun,
+        interactive commands for members to use, the kind of lightweight engagement
+        features that keep a community active. It's a persistent, always-on service
+        rather than a script that runs once, which is what made the hosting and
+        reliability side of the project as interesting as the bot logic itself.
+      </p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Why I Built It</h2>
+    <div class="proj-body">
+      <p>
+        As a materials engineering student, most of my technical work is lab-based
+        or simulation-based. This project was a deliberate way to build comfort on
+        the software and infrastructure side, writing an application in Python,
+        deploying it to a real cloud environment, and being responsible for keeping
+        it running, rather than working from a pre-configured lab machine or a
+        one-off script.
+      </p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">How It's Built</h2>
+    <div class="proj-body">
+      <p>
+        The bot itself is written in Python using Discord's bot API to listen for
+        and respond to commands in real time. It's deployed on an AWS instance that
+        I provisioned and configured myself, handling everything from initial setup
+        through ongoing uptime monitoring and maintenance. Running it as a
+        continuously live service, rather than a local script, meant thinking about
+        reliability, restarts, and monitoring in a way that project-based coursework
+        rarely requires.
+      </p>
+    </div>
+    <div class="stack-row">
+      <span class="stack-chip">Python</span>
+      <span class="stack-chip">Discord API</span>
+      <span class="stack-chip">AWS EC2</span>
+      <span class="stack-chip">Linux</span>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Outcome</h2>
+    <div class="proj-body">
+      <p>
+        The bot has been running independently since deployment, giving me practical,
+        ongoing experience with cloud systems administration alongside my materials
+        engineering coursework, a small but real example of being comfortable working
+        across both hardware and software domains.
+      </p>
+    </div>
+  </div>
+
 </main>
 
 <footer>

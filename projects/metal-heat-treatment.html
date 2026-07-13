@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metal Heat Treatment &amp; Processing — Ben Mellin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .proj-section{ margin-bottom: 40px; }
+  .proj-h2{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  .proj-h2-sub{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-faint);
+    margin-bottom: 14px;
+  }
+  .proj-body{
+    color: var(--text-dim);
+    max-width: 700px;
+    font-size: 15.5px;
+  }
+  .proj-body p{ margin: 0 0 14px; }
+  .stat-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 20px 0 8px;
+  }
+  .stat{
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 6px;
+    padding: 16px 20px;
+    min-width: 150px;
+  }
+  .stat-value{
+    font-family: var(--font-mono);
+    font-size: 20px;
+    color: var(--temper-4);
+  }
+  .stat-label{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 4px;
+  }
+  .figure-row{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .figure{
+    flex: 1;
+    min-width: 220px;
+  }
+  .figure img{
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background: var(--surface-2);
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    display: block;
+  }
+  .figure-cap{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 8px;
+  }
+  .figure-wide img{
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+    max-height: 720px;
+    object-fit: contain;
+    background: var(--surface-2);
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    display: block;
+    margin: 0 auto;
+  }
+  .section-divider{
+    margin: 52px 0 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .section-divider:first-of-type{
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+  .team-note{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-faint);
+    margin: 4px 0 16px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="../index.html">BEN MELLIN</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap" style="padding-top:56px; padding-bottom:100px;">
+  <a href="../index.html#projects" class="btn btn-ghost" style="margin-bottom:32px; display:inline-flex;">&larr; Back to projects</a>
+
+  <div>
+    <span class="tag tag-materials">Materials</span>
+  </div>
+  <h1 style="font-family:var(--font-display); font-weight:600; font-size:34px; margin-top:14px; margin-bottom:10px; max-width:720px;">
+    Metal Heat Treatment &amp; Processing
+  </h1>
+  <p style="color:var(--text-dim); max-width:680px; margin-bottom:8px; font-size:16px;">
+    Four hands-on metallurgy labs spanning steel and aluminum, tying phase
+    diagrams and transformation theory to measured hardness, microstructure,
+    and mechanical property outcomes.
+  </p>
+
+  <div class="temper-rule thin" style="margin-bottom:32px;"></div>
+
+  <div class="section-divider">
+    <div>
+      <span class="tag tag-materials">Steel</span>
+    </div>
+    <h2 class="proj-h2" style="margin-top:14px;">1075 Steel Heat Treatment for Hunting Knives</h2>
+    <div class="proj-h2-sub">Team: Benjamin Mellin, Grace Matthews, Aryan Lamba, Maxx Roberts</div>
+    <div class="proj-body">
+      <p>
+        Hunting knives need a balance most steels don't offer naturally, high
+        hardness for edge retention alongside enough ductility to resist
+        chipping. We designed a heat treatment for 1075 annealed spring steel
+        targeting a Rockwell hardness of B60&ndash;B65 and a Young's modulus
+        near 200 GPa, guided by the steel's TTT diagram: austenitizing at
+        800&deg;C, quenching in silicone oil, then dual tempering at 200&deg;C
+        for two 2-hour cycles.
+      </p>
+    </div>
+    <div class="figure figure-wide">
+      <img src="media/1075-poster-full.jpg" alt="Research poster: Heat Treatment of C1075 Annealed Spring Steel for Application in Hunting Knives">
+      <div class="figure-cap">Full research poster, presented for the course</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-value">+61.5%</div>
+        <div class="stat-label">Young's modulus vs. control (156.98 &rarr; 253.51 GPa)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">B109.3</div>
+        <div class="stat-label">Rockwell hardness (target: B60&ndash;65)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">p = 0.00023</div>
+        <div class="stat-label">statistically significant hardness increase</div>
+      </div>
+    </div>
+    <div class="proj-body" style="margin-top:16px;">
+      <p>
+        The treatment worked, arguably too well. Hardness and modulus both
+        increased significantly and the difference was statistically
+        significant by t-test, but both overshot the target range meant for
+        knife applications, and ductility barely improved. The honest
+        conclusion: this treatment produced a harder, stronger steel than
+        intended, and the real design lesson was in the gap between
+        hypothesis and result, which we used to propose a revised tempering
+        window (150&ndash;250&deg;C) for future iterations.
+      </p>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div>
+      <span class="tag tag-materials">Steel</span>
+    </div>
+    <h2 class="proj-h2" style="margin-top:14px;">Hot Forging of 1045 Steel</h2>
+    <div class="proj-h2-sub">Individual lab report</div>
+    <div class="proj-body">
+      <p>
+        This lab looked at what happens when hot forging is combined with a
+        rapid quench, rather than just studying either process alone. AISI
+        1045 medium-carbon square stock was heated to 1000&ndash;1300&deg;C
+        (bright yellow), open-die forged from 3/4" down to 1/4" thickness on
+        an anvil, then a cut section was water-quenched immediately to lock
+        in the high-temperature microstructure.
+      </p>
+    </div>
+    <div class="figure-row">
+      <div class="figure">
+        <img src="media/forging-before.jpg" alt="Optical micrograph of normalized 1045 steel reference sample at 100x">
+        <div class="figure-cap">Reference: normalized 1045, 100x optical</div>
+      </div>
+      <div class="figure">
+        <img src="media/forging-after.jpg" alt="Optical micrograph of forged and quenched 1045 steel at 10x showing banding and flow lines">
+        <div class="figure-cap">Post-forging + quench, 10x optical</div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-value">18.1 &rarr; 61.2 HRC</div>
+        <div class="stat-label">hardness, reference vs. forged + quenched</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">3.4&times;</div>
+        <div class="stat-label">hardness increase</div>
+      </div>
+    </div>
+    <div class="proj-body" style="margin-top:16px;">
+      <p>
+        Optical microscopy told the mechanism story clearly: the reference
+        sample showed uniform ferrite-pearlite, while the forged sample
+        showed banded, needle-like martensite with visible flow lines from
+        the deformation itself. Both the metallurgy (martensitic
+        transformation on quench) and the mechanical history (forging-induced
+        texture) were visible in the same image, which made this one of the
+        clearer cause-and-effect labs of the group.
+      </p>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div>
+      <span class="tag tag-materials">Steel</span>
+    </div>
+    <h2 class="proj-h2" style="margin-top:14px;">Fine Pearlite Formation in 1010 Steel</h2>
+    <div class="proj-h2-sub">Team lab report</div>
+    <div class="proj-body">
+      <p>
+        Fine pearlite, lamellar spacing under 200 nm, offers higher hardness
+        and yield strength than coarse pearlite while retaining useful
+        ductility, valuable for applications like railroad wheels. Using the
+        continuous cooling transformation diagram for low-carbon steel, we
+        targeted normalization at 900&deg;C followed by still-air cooling at
+        roughly 5&deg;C/min, fast enough to refine the pearlite without
+        crossing into the bainite region.
+      </p>
+    </div>
+    <div class="figure-row">
+      <div class="figure">
+        <img src="media/1010-sem-pre.jpg" alt="SEM image of AISI 1010 steel before heat treatment at 2150x">
+        <div class="figure-cap">Pre-treatment, 2150x SEM</div>
+      </div>
+      <div class="figure">
+        <img src="media/1010-sem-post.jpg" alt="SEM image of AISI 1010 steel after heat treatment showing defined pearlite grains at 2150x">
+        <div class="figure-cap">Post-treatment, 2150x SEM</div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-value">133 &plusmn; 15 nm</div>
+        <div class="stat-label">measured lamellar spacing (target: &lt;200 nm)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">45 &rarr; 59 HV</div>
+        <div class="stat-label">Vickers hardness, untreated vs. treated</div>
+      </div>
+    </div>
+    <div class="figure" style="max-width:500px; margin-top:20px;">
+      <img src="media/1010-hardness-graph.jpg" alt="Bar graph comparing Vickers hardness of treated and untreated 1010 steel">
+      <div class="figure-cap">Vickers hardness comparison</div>
+    </div>
+    <div class="proj-body" style="margin-top:16px;">
+      <p>
+        Since 133 nm lamellar spacing is well under standard optical
+        microscopy's resolution, this lab required SEM to actually see and
+        measure what we'd produced, a useful reminder that choosing the right
+        characterization tool is as much a part of materials engineering as
+        choosing the right process.
+      </p>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div>
+      <span class="tag tag-materials">Aluminum</span>
+    </div>
+    <h2 class="proj-h2" style="margin-top:14px;">Age Hardening of Al 6061</h2>
+    <div class="proj-h2-sub">Individual lab report</div>
+    <div class="proj-body">
+      <p>
+        Unlike the steel labs, aluminum can't be strengthened by martensitic
+        transformation, so age hardening (precipitation hardening) is the
+        mechanism that matters: solution treat to dissolve precipitates,
+        quench to trap a supersaturated solid solution, then age at an
+        elevated temperature to grow fine, coherent precipitates that block
+        dislocation motion. I tracked hardness across aging times of one to
+        four hours at two temperatures, 100&deg;C and 200&deg;C, to map the
+        aging curve.
+      </p>
+    </div>
+    <div class="figure-row">
+      <div class="figure">
+        <img src="media/al-aging-100c.jpg" alt="Graph of Vickers hardness vs aging time at 100 degrees Celsius for Al 6061">
+        <div class="figure-cap">Hardness vs. aging time, 100&deg;C</div>
+      </div>
+      <div class="figure">
+        <img src="media/al-aging-200c.jpg" alt="Graph of Vickers hardness vs aging time at 200 degrees Celsius for Al 6061">
+        <div class="figure-cap">Hardness vs. aging time, 200&deg;C</div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-value">136.6 &rarr; 57.4 HV</div>
+        <div class="stat-label">hardness drop after solution treat + quench</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">85.1 HV</div>
+        <div class="stat-label">peak at 100&deg;C (2 hr)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">102.7 HV</div>
+        <div class="stat-label">peak at 200&deg;C (2 hr)</div>
+      </div>
+    </div>
+    <div class="proj-body" style="margin-top:16px;">
+      <p>
+        The 200&deg;C series reached near-peak hardness within the first
+        hour and plateaued, consistent with faster precipitate nucleation
+        kinetics at higher temperature, while 100&deg;C aging was slower and
+        noisier, with the 3-hour sample dipping below the 1- and 2-hour
+        results, most likely measurement variability rather than true
+        overaging, given how early that would be in the precipitation
+        sequence. Comparing both curves to the pre-quench baseline of 136.6
+        HV also made clear neither condition reached peak hardness within
+        the four-hour window tested.
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">Ben Mellin &middot; Tampa, FL</div>
+</footer>
+
+</body>
+</html>

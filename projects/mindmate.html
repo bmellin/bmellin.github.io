@@ -9,6 +9,95 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="../styles.css">
+<style>
+  .proj-section{ margin-bottom: 40px; }
+  .proj-h2{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .proj-body{
+    color: var(--text-dim);
+    max-width: 700px;
+    font-size: 15.5px;
+  }
+  .proj-body p{ margin: 0 0 14px; }
+  .role-note{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--temper-4);
+    border-left: 2px solid var(--temper-4);
+    padding-left: 12px;
+    margin: 20px 0 32px;
+  }
+  .team-note{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-faint);
+    max-width: 680px;
+    margin-top: 4px;
+  }
+  .stat-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 20px 0 8px;
+  }
+  .stat{
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 6px;
+    padding: 16px 20px;
+    min-width: 160px;
+  }
+  .stat-value{
+    font-family: var(--font-mono);
+    font-size: 22px;
+    color: var(--temper-4);
+  }
+  .stat-label{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 4px;
+  }
+  .figure{ margin: 20px 0; }
+  .figure img{
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    max-height: 460px;
+    object-fit: contain;
+    background: var(--surface-2);
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    display: block;
+    margin: 0 auto;
+  }
+  .figure-cap{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 8px;
+    text-align: center;
+  }
+  .quote{
+    border-left: 2px solid var(--border);
+    padding-left: 14px;
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: 14.5px;
+    margin: 12px 0;
+  }
+  .quote-attr{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    font-style: normal;
+    margin-top: 4px;
+  }
+</style>
 </head>
 <body>
 
@@ -29,18 +118,197 @@
   <div>
     <span class="tag tag-software">Software</span>
   </div>
-  <h1 style="font-family:var(--font-display); font-weight:600; font-size:36px; margin-top:14px; margin-bottom:18px;">MindMate — Engineering Innovation</h1>
-
-  <p style="color:var(--text-dim); max-width:640px; margin-bottom:32px; font-size:16px;">
-    Placeholder overview. Replace this with the full writeup, problem, approach, and outcome.
+  <h1 style="font-family:var(--font-display); font-weight:600; font-size:34px; margin-top:14px; margin-bottom:10px; max-width:720px;">
+    MindMate &mdash; A Wearable AI Assistant for Elderly Independence
+  </h1>
+  <p style="color:var(--text-dim); max-width:680px; margin-bottom:4px; font-size:16px;">
+    A full product development cycle for Engineering Innovation, from need-finding
+    through market research, ideation, prototyping, and feasibility analysis.
   </p>
+  <p class="team-note">
+    Team: Gabriel Mora (Mechanical Engineering), Bhuvan Dhand (Computer Science),
+    Noah Norwitch (Electrical Engineering), Yash Bhalla (Computer Science),
+    Ben Mellin (Materials Science and Engineering)
+  </p>
+
+  <div class="role-note">
+    My role: Team Lead; materials selection and analysis for the physical wearable device
+  </div>
 
   <div class="temper-rule thin" style="margin-bottom:32px;"></div>
 
-  <h2 style="font-family:var(--font-display); font-size:20px; margin-bottom:12px;">Details</h2>
-  <p style="color:var(--text-dim); max-width:640px;">
-    Add images, diagrams, or data specific to this project here once available.
-  </p>
+  <div class="proj-section">
+    <h2 class="proj-h2">Need</h2>
+    <div class="proj-body">
+      <p>
+        As people age, cognitive decline makes everyday tasks, medications,
+        appointments, finances, harder to manage independently, increasing reliance
+        on caregivers and risk to wellbeing. The need statement we converged on:
+        reduce the cognitive load on elderly people managing their day-to-day tasks
+        and activities. With the global population aged 60+ projected to double by
+        2050, we treated this as a growing, underserved problem rather than a niche
+        one.
+      </p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Research</h2>
+    <div class="proj-body">
+      <p>
+        We mapped 28 stakeholder groups, from elderly individuals and caregivers to
+        insurance companies and device manufacturers, then went out and talked to
+        them directly.
+      </p>
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-value">25</div>
+        <div class="stat-label">interviews across 8 stakeholder groups</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">30</div>
+        <div class="stat-label">survey responses</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">96%</div>
+        <div class="stat-label">say social interaction matters for cognitive stress</div>
+      </div>
+    </div>
+    <div class="proj-body" style="margin-top:20px;">
+      <p>
+        The clearest signal across interviews: elderly users are hesitant to adopt
+        new technology unless it's genuinely simple, and family caregivers are
+        already absorbing most of the cognitive burden themselves. Only half of
+        survey respondents said they were comfortable using technology at all,
+        which shaped nearly every design decision that followed, simplicity had to
+        outweigh feature count.
+      </p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Ideation</h2>
+    <div class="proj-body">
+      <p>
+        We benchmarked existing solutions, reminder apps, wearables, smart pill
+        dispensers, against affordability, ease of use, personalization,
+        dependability, and independence, and found a clear white space: most
+        products traded off ease of use for functionality, or vice versa. Using
+        MediSafe as a reference competitor, we applied SIT (Systematic Inventive
+        Thinking) tools, subtraction, division, multiplication, task unification,
+        and attribute dependency, to systematically generate new directions rather
+        than brainstorming unconstrained.
+      </p>
+      <p>
+        That process converged on MindMate: a wearable, styleable AI assistant
+        paired with a companion app, ElderlyCare, that lets caregivers manage
+        reminders and monitor wellbeing without the elderly user needing to
+        navigate a complex interface themselves.
+      </p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Prototyping</h2>
+    <div class="proj-body">
+      <p>
+        We tested the concept in two stages. Prototype 1 addressed physical
+        feasibility: batteries were taped to an ordinary pair of glasses to
+        simulate the weight of a wearable device, then worn by elderly volunteers
+        (65+) for a full day to test comfort and practicality.
+      </p>
+    </div>
+    <div class="figure">
+      <img src="media/mindmate-prototype1.jpg" alt="Physical prototype testing setup, glasses with batteries taped on to simulate device weight">
+      <div class="figure-cap">Prototype 1, physical weight and comfort testing</div>
+    </div>
+    <div class="quote">
+      "The glasses were a bit heavy on one side. They did not feel too balanced and
+      often fell down my nose."
+      <div class="quote-attr">&mdash; Chris Feldhausen, age 68</div>
+    </div>
+    <div class="proj-body" style="margin-top:16px;">
+      <p>
+        That feedback directly shaped the next iteration, showing form factor
+        flexibility (clip, necklace, or bracelet) mattered more than a single fixed
+        design. Prototype 2 shifted to the software side, a working app interface
+        tested with both elderly users and caregivers to see whether they could
+        complete basic tasks unassisted.
+      </p>
+    </div>
+    <div class="figure">
+      <img src="media/mindmate-prototype2.jpg" alt="Prototype 2 app interface screens tested with elderly users and caregivers">
+      <div class="figure-cap">Prototype 2, companion app interface testing</div>
+    </div>
+    <div class="quote">
+      "The voice control feature looks fantastic, I can add tasks or ask for
+      information without fumbling with my reading glasses."
+      <div class="quote-attr">&mdash; Janak Nandini, age 72</div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Final Solution</h2>
+    <div class="proj-body">
+      <p>
+        MindMate combines a compact wearable device, flexible enough to clip to
+        clothing, a bag, or the body, with the ElderlyCare companion app. Core
+        features: voice interaction, reminders and checklists for medication and
+        appointments, an emergency alert button, and optional camera functionality
+        for object recognition and caregiver monitoring.
+      </p>
+    </div>
+    <div class="figure">
+      <img src="media/mindmate-final-solution.jpg" alt="Final MindMate solution overview showing device use cases and features">
+      <div class="figure-cap">Final solution overview: use cases, features, and device concept</div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Feasibility</h2>
+    <div class="proj-body">
+      <p>
+        We stress-tested the concept with PESTEL and SWOT analyses, a Porter's Five
+        Forces competitive assessment, an IP landscape review, and a structured
+        safety hazard analysis covering risks from allergic reaction to skin contact
+        materials through data privacy and false emergency alerts. As the materials
+        engineer on the team, I contributed to the physical device's material
+        selection and hazard analysis, given a wearable in constant skin contact has
+        real constraints around biocompatibility, durability, and comfort that
+        software-only teammates weren't positioned to evaluate alone.
+      </p>
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-value">57.6M</div>
+        <div class="stat-label">Americans aged 65+</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">18.8M</div>
+        <div class="stat-label">aged 65+ with a disability</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">$2.1T</div>
+        <div class="stat-label">projected elderly care market by 2050</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <h2 class="proj-h2">Outcome</h2>
+    <div class="proj-body">
+      <p>
+        The final pitch presented MindMate as a two-part solution, physical device
+        plus companion app, backed by primary research, two rounds of user testing,
+        and a full feasibility and go-to-market analysis, to a faculty jury in the
+        UF innovation department. The project was as much a case study in
+        structured product development, need-finding through SIT-based ideation
+        through iterative prototyping, as it was about the product itself.
+      </p>
+    </div>
+  </div>
+
 </main>
 
 <footer>

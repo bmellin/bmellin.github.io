@@ -3,12 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ML for Materials Property Prediction — Ben Mellin</title>
+<title>ML for Materials Science — Ben Mellin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="../styles.css">
+<style>
+  .proj-section{ margin-bottom: 40px; }
+  .proj-h2{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .proj-h3{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    margin: 22px 0 10px;
+  }
+  .proj-body{
+    color: var(--text-dim);
+    max-width: 700px;
+    font-size: 15.5px;
+  }
+  .proj-body p{ margin: 0 0 14px; }
+  .role-note{
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--temper-4);
+    border-left: 2px solid var(--temper-4);
+    padding-left: 12px;
+    margin: 20px 0 32px;
+  }
+  .stat-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 20px 0 8px;
+  }
+  .stat{
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 6px;
+    padding: 16px 20px;
+    min-width: 150px;
+  }
+  .stat-value{
+    font-family: var(--font-mono);
+    font-size: 20px;
+    color: var(--temper-4);
+  }
+  .stat-label{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 4px;
+  }
+  .figure-row{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .figure{
+    flex: 1;
+    min-width: 220px;
+  }
+  .figure img{
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background: var(--surface-2);
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    display: block;
+  }
+  .figure-cap{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 8px;
+  }
+  .divider-block{
+    margin: 56px 0 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .results-table{
+    width: 100%;
+    max-width: 560px;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .results-table th, .results-table td{
+    text-align: left;
+    padding: 8px 14px 8px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .results-table th{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .results-table td{ color: var(--text-dim); }
+  .results-table tr:last-child td{ color: var(--temper-4); font-weight: 600; }
+</style>
 </head>
 <body>
 
@@ -29,18 +133,150 @@
   <div>
     <span class="tag tag-software">Software</span>
   </div>
-  <h1 style="font-family:var(--font-display); font-weight:600; font-size:36px; margin-top:14px; margin-bottom:18px;">ML for Materials Property Prediction</h1>
-
-  <p style="color:var(--text-dim); max-width:640px; margin-bottom:32px; font-size:16px;">
-    Placeholder overview. Replace this with the full writeup, problem, approach, and outcome.
+  <h1 style="font-family:var(--font-display); font-weight:600; font-size:34px; margin-top:14px; margin-bottom:10px; max-width:720px;">
+    Machine Learning for Materials Science
+  </h1>
+  <p style="color:var(--text-dim); max-width:680px; margin-bottom:8px; font-size:16px;">
+    Two coursework projects from AI for Materials, applying regression and CNN
+    architectures to materials problems: predicting semiconductor bandgaps for
+    solar water-splitting, and segmenting precipitate particles in metallographic
+    images.
   </p>
+
+  <div class="role-note">
+    Coursework: EMA 4935 / EMA 6938, AI for Materials
+  </div>
 
   <div class="temper-rule thin" style="margin-bottom:32px;"></div>
 
-  <h2 style="font-family:var(--font-display); font-size:20px; margin-bottom:12px;">Details</h2>
-  <p style="color:var(--text-dim); max-width:640px;">
-    Add images, diagrams, or data specific to this project here once available.
-  </p>
+  <div class="proj-section">
+    <h2 class="proj-h2">Part 1: Bandgap Prediction for Water-Splitting Materials</h2>
+    <div class="proj-body">
+      <p>
+        Photoelectrochemical water splitting needs a semiconductor with a bandgap
+        in a specific window, large enough to drive the reaction thermodynamically,
+        small enough to absorb useful sunlight. The target range is 1.5 to 2.5 eV.
+        The goal was to train a model on known materials and use it to screen 200
+        unlabeled candidates for promising water-splitting materials.
+      </p>
+    </div>
+
+    <div class="proj-h3">Data &amp; Feature Engineering</div>
+    <div class="proj-body">
+      <p>
+        Training data came from 4,800 materials pulled from the Materials Project
+        database, with a bandgap distribution averaging 2.50 eV (std. dev. 1.64 eV).
+        Raw structural columns (density, volume per atom, space group, crystal
+        system) were combined with composition-based descriptors generated via
+        matminer, Magpie elemental property statistics and oxidation-state
+        features, then one-hot encoded and assembled into a 148-feature matrix.
+      </p>
+    </div>
+    <div class="figure" style="max-width:500px;">
+      <img src="media/bandgap-histogram.jpg" alt="Histogram of bandgap values in the training dataset">
+      <div class="figure-cap">Distribution of bandgap values across the 4,800-material training set</div>
+    </div>
+
+    <div class="proj-h3">Modeling</div>
+    <div class="proj-body">
+      <p>
+        I compared two ensemble tree methods, Random Forest and Gradient Boosted
+        Trees, both well suited to a high-dimensional, noisy feature space without
+        assuming a linear relationship between composition and bandgap.
+        Hyperparameters were tuned via 5-fold grid search cross-validation for
+        each.
+      </p>
+    </div>
+    <table class="results-table">
+      <tr><th>Model</th><th>MAE (eV)</th><th>RMSE (eV)</th><th>R&sup2;</th></tr>
+      <tr><td>Random Forest</td><td>0.557</td><td>0.782</td><td>0.754</td></tr>
+      <tr><td>Gradient Boosting (best)</td><td>0.547</td><td>0.757</td><td>0.769</td></tr>
+    </table>
+    <div class="figure-row">
+      <div class="figure">
+        <img src="media/bandgap-parity-plots.jpg" alt="Parity plots comparing predicted vs actual bandgap for both models">
+        <div class="figure-cap">Predicted vs. actual bandgap, both models</div>
+      </div>
+      <div class="figure">
+        <img src="media/bandgap-learning-curve.jpg" alt="Learning curve showing training and validation MAE vs training set size">
+        <div class="figure-cap">Learning curve, Random Forest</div>
+      </div>
+    </div>
+    <div class="proj-body">
+      <p>
+        The learning curve showed a persistent gap between training and validation
+        error, low bias but meaningful variance, indicating the model was
+        overfitting somewhat to the training distribution. That mattered for how I
+        framed the results: I flagged in my writeup that predictions likely
+        wouldn't generalize cleanly to materials outside the Materials Project
+        database, and that any candidate list should be treated as a starting
+        point for experimental follow-up, not a final answer.
+      </p>
+    </div>
+
+    <div class="proj-h3">Screening Results</div>
+    <div class="proj-body">
+      <p>
+        Applying the trained model to 200 unlabeled candidate materials identified
+        68 with predicted bandgaps in the 1.5&ndash;2.5 eV target window. Ranking by
+        closeness to the ideal 2.0 eV midpoint surfaced candidates like
+        KMg&#8323;V&#8323;CuO&#8321;&#8322; and Cr&#8322;WO&#8326;, both landing within
+        0.02 eV of the target.
+      </p>
+    </div>
+  </div>
+
+  <div class="divider-block">
+    <div>
+      <span class="tag tag-materials">Materials</span>
+    </div>
+    <h2 class="proj-h2" style="margin-top:14px;">Part 2: CNN Segmentation of Metallographic Images</h2>
+    <div class="proj-body">
+      <p>
+        A companion project applying a different architecture to a different kind
+        of materials data: rather than predicting a property from composition,
+        this used a convolutional encoder-decoder to segment precipitate particles
+        directly out of noisy micrograph images, the same category of task as
+        identifying second-phase particles in a real metallographic image.
+      </p>
+    </div>
+
+    <div class="proj-h3">Approach</div>
+    <div class="proj-body">
+      <p>
+        Working from 2,000 synthetic 128&times;128 grayscale micrographs, each
+        containing 5&ndash;20 circular precipitates against a noisy metal-matrix
+        background, I built a three-stage CNN encoder-decoder in PyTorch. The
+        encoder progressively downsamples through three Conv2d + ReLU + MaxPool
+        stages (1&rarr;16&rarr;32&rarr;64 channels) to extract features, and the
+        decoder upsamples back to a full-resolution, per-pixel segmentation mask
+        trained with BCEWithLogitsLoss over 30 epochs.
+      </p>
+    </div>
+
+    <div class="proj-h3">Results</div>
+    <div class="proj-body">
+      <p>
+        Training and validation loss both decreased steadily and converged to
+        similarly low values, in the 0.04&ndash;0.08 BCE loss range, by the final
+        epoch, with only a small gap between the two curves, indicating the model
+        learned to generalize rather than memorize the training set. Visualizing
+        the learned first-layer filters showed the network had picked up
+        edge- and blob-detecting kernels, consistent with what a CNN should learn
+        for a particle-detection task.
+      </p>
+      <p>
+        The assignment also included conceptual analysis connecting this
+        architecture back to fully connected autoencoders, covering why
+        convolutional layers are necessary for image-scale data (parameter
+        explosion and loss of spatial structure in a fully connected equivalent),
+        the numerical stability tradeoffs of BCEWithLogitsLoss versus separate
+        sigmoid and BCE, and how padding choices affect feature map dimensions
+        through a multi-stage encoder.
+      </p>
+    </div>
+  </div>
+
 </main>
 
 <footer>
