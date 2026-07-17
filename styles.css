@@ -108,7 +108,8 @@
 
   /* ---------- hero ---------- */
   .hero{
-    padding: 96px 0 72px;
+    padding-top: 96px;
+    padding-bottom: 72px;
   }
 
   .eyebrow{
