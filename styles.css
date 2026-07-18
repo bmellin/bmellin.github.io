@@ -272,6 +272,87 @@
     grid-column: 1 / -1;
 }
 
+  .tool-banner{
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 6px;
+    padding: 18px 24px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .tool-banner:hover{
+    border-color: var(--temper-4);
+    box-shadow: 0 0 18px rgba(62,110,145,.18);
+  }
+
+  .tool-banner-icon{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(62,110,145,0.14);
+    color: var(--temper-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    flex-shrink: 0;
+  }
+
+  .tool-banner-text{ flex: 1; min-width: 0; }
+
+  .tool-banner-eyebrow{
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--temper-4);
+    margin-bottom: 4px;
+  }
+
+  .tool-banner-text h3{
+    font-family: var(--font-display);
+    font-size: 17px;
+    margin: 0 0 4px;
+    color: var(--text);
+  }
+
+  .tool-banner-text p{
+    font-size: 13.5px;
+    color: var(--text-dim);
+    margin: 0;
+    max-width: 640px;
+  }
+
+  .tool-banner-link{
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .tool-banner-link:hover{
+    border-color: var(--temper-4);
+    color: var(--temper-4);
+  }
+
+  @media (max-width: 640px){
+    .tool-banner{ flex-direction: column; align-items: flex-start; }
+    .tool-banner-link{ width: 100%; justify-content: center; }
+  }
+
   .card-media{
     width: 80%;
     border-radius: 4px;
