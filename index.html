@@ -28,6 +28,8 @@
 <main id="top">
 
   <div class="wrap hero">
+   <div class="hero-inner">
+    <div class="hero-text">
     <div class="eyebrow">Materials Science &mdash; Aerospace &amp; Defense</div>
     <h1 class="name">Ben Mellin</h1>
     <p class="hero-sub">Materials engineer specializing in aerospace structures, high-temperature materials, and simulation.</p>
@@ -48,6 +50,11 @@
       <span>Tampa, FL</span>
       <span>Open to relocation</span>
     </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div id="hero-canvas"></div>
+    </div>
+   </div>
   </div>
 
   <div class="temper-rule"></div>
@@ -321,6 +328,9 @@
 <footer>
   <div class="wrap">Ben Mellin &middot; Tampa, FL</div>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="orbit-animation.js"></script>
 
 <script>
   const revealEls = document.querySelectorAll('.reveal');
