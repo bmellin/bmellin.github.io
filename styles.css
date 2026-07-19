@@ -526,21 +526,30 @@
   }
 
   /* ---------- reveal on scroll ---------- */
-  .reveal{
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    /* When the projects grid is "locked" (page loaded at top), keep its reveal
+       children hidden until the user actually scrolls. This prevents the top
+       project card from flashing into view on initial load. */
+    .projects-grid.locked .reveal{
+      opacity: 0 !important;
+      transform: translateY(28px) !important;
+      transition: none !important;
+      pointer-events: none;
   }
-  .reveal.is-visible{
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
-    .reveal{ opacity: 1; transform: none; transition: none; }
-    .card:hover{ transform: none; }
-  }
+    .reveal{
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      .reveal{ opacity: 1; transform: none; transition: none; }
+      .card:hover{ transform: none; }
+    }
 
   /* focus visibility */
   a:focus-visible, button:focus-visible{
