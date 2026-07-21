@@ -332,20 +332,6 @@
 <script src="orbit-animation.js"></script>
 
 <script>
-  // Prevent the top project from flashing into view on initial load by "locking"
-  // the projects grid until the user scrolls a small amount.
-  const projectsGrid = document.querySelector('.projects-grid');
-  if (projectsGrid) {
-    projectsGrid.classList.add('locked');
-    const unlockOnScroll = function() {
-      if (window.scrollY > 20) {
-        projectsGrid.classList.remove('locked');
-        window.removeEventListener('scroll', unlockOnScroll);
-      }
-    };
-    window.addEventListener('scroll', unlockOnScroll, { passive: true });
-  }
-
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
