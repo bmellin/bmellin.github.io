@@ -105,8 +105,8 @@
 
   /* ---------- hero ---------- */
   .hero{
-    padding-top: 96px;
-    padding-bottom: 72px;
+    margin-top: 170px;
+    margin-bottom: 250px;
   }
 
   .hero-inner{
