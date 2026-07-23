@@ -274,24 +274,22 @@
     flex-direction: column;
     gap: 14px;
     position: relative;
-    padding-bottom: 52px;
     flex: 1 1 300px;
     transition: border-color 0.2s ease, transform 0.2s ease;
   }
 
   .card-link{
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    background: var(--surface-2);
-    display: flex;
+    align-self: flex-end;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    color: var(--text-dim);
+    gap: 7px;
+    padding: 9px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--temper-4);
+    background: rgba(62, 110, 145, 0.14);
+    color: var(--temper-4);
+    font-family: var(--font-mono);
+    font-size: 13px;
     text-decoration: none;
     transition: all 0.2s ease;
   }
@@ -304,7 +302,7 @@
   }
 
   .card-link i{
-    font-size: 15px;
+    font-size: 14px;
   }
   
   .card-featured{
